@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="alu_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="alu_tb" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="7401fs"></ZoomEndTime>
+      <Cursor1Time time="200000000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="210"></NameColumnWidth>
+      <ValueColumnWidth column_width="223"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="12" />
+   <wvobject type="array" fp_name="/alu_tb/x_in">
+      <obj_property name="ElementShortName">x_in[15:0]</obj_property>
+      <obj_property name="ObjectShortName">x_in[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/alu_tb/y_in">
+      <obj_property name="ElementShortName">y_in[15:0]</obj_property>
+      <obj_property name="ObjectShortName">y_in[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/alu_tb/z_in">
+      <obj_property name="ElementShortName">z_in[15:0]</obj_property>
+      <obj_property name="ObjectShortName">z_in[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/alu_tb/delta">
+      <obj_property name="ElementShortName">delta[15:0]</obj_property>
+      <obj_property name="ObjectShortName">delta[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/alu_tb/i">
+      <obj_property name="ElementShortName">i[3:0]</obj_property>
+      <obj_property name="ObjectShortName">i[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/alu_tb/mu">
+      <obj_property name="ElementShortName">mu</obj_property>
+      <obj_property name="ObjectShortName">mu</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/alu_tb/x_out">
+      <obj_property name="ElementShortName">x_out[15:0]</obj_property>
+      <obj_property name="ObjectShortName">x_out[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/alu_tb/y_out">
+      <obj_property name="ElementShortName">y_out[15:0]</obj_property>
+      <obj_property name="ObjectShortName">y_out[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/alu_tb/z_out">
+      <obj_property name="ElementShortName">z_out[15:0]</obj_property>
+      <obj_property name="ObjectShortName">z_out[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider21" type="divider">
+      <obj_property name="label">INTERNAL</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/alu_tb/DUT/x_delta">
+      <obj_property name="ElementShortName">x_delta</obj_property>
+      <obj_property name="ObjectShortName">x_delta</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/alu_tb/DUT/y_delta">
+      <obj_property name="ElementShortName">y_delta</obj_property>
+      <obj_property name="ObjectShortName">y_delta</obj_property>
+   </wvobject>
+</wave_config>

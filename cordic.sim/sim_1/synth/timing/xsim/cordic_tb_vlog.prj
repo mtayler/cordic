@@ -1,0 +1,7 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"cordic_tb_time_synth.v" \
+"../../../../../cordic.srcs/sim_1/new/cordic_tb.v" \
+
+# Do not sort compile order
+nosort

@@ -1,0 +1,7 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"board_tb_func_synth.v" \
+"../../../../../cordic.srcs/sim_board/new/board_tb.v" \
+
+# Do not sort compile order
+nosort
