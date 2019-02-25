@@ -60,26 +60,50 @@ module board(
     
     always @(*)
         case (sel_xyz_init)
-            2'b00: begin       // (0.5,0,30deg)
-                x <= `WORD_LENGTH'h4000;
-                y <= `WORD_LENGTH'h0000;
-                z <= (op) ? `WORD_LENGTH'h0 : `WORD_LENGTH'h2183;
+            2'b00:
+                if (op) begin       // (0,0.5,30deg)
+                    x <= 'h0000;
+                    y <= 'h4000;
+                    z <= 'h0000;
+                end
+                else begin          // (0.5,0,0)
+                    x <= 'h4000;
+                    y <= 'h0000;
+                    z <= 'h2183;
+                end
+            2'b01:
+                if (op) begin       // (1/4,sqrt(3/16),30deg)
+                    x <= 'h2000;
+                    y <= 'h6EDA;
+                    z <= 'h0000;
+                end
+                else begin          // (sqrt(3/4),1/4,0)
+                    x <= 'h376D;
+                    y <= 'h2000;
+                    z <= 'h2183;
+                end
+            2'b10:
+                if (op) begin       // (1/4,1/4,0)
+                    x <= 'h2000;
+                    y <= 'h2000;
+                    z <= 'h0000;
+                end
+                else begin          // (1/4,sqrt(3/4),60deg)
+                    x <= 'h2000;
+                    y <= 'h376D;
+                    z <= 'h4305;
             end
-            2'b01: begin       // (sqrt(3/4),1/4,30deg)
-                x <= `WORD_LENGTH'h376D;
-                y <= `WORD_LENGTH'h2000;
-                z <= (op) ? `WORD_LENGTH'h0 : `WORD_LENGTH'h2183 ;
-            end
-            2'b10: begin       // (1/4,sqrt(3/4),60deg)
-                x <= `WORD_LENGTH'h2000;
-                y <= `WORD_LENGTH'h376D;
-                z <= (op) ? `WORD_LENGTH'h0 : `WORD_LENGTH'h4305;
-            end
-            2'b11: begin       // (1/4,sqrt(3/4),30deg)
-                x <= `WORD_LENGTH'h2000;
-                y <= `WORD_LENGTH'h376D;
-                z <= (op) ? `WORD_LENGTH'h0 : `WORD_LENGTH'h2183;
-            end
+            2'b11:
+                if (op) begin       // (sqrt(3/4),1/4,0)
+                    x <= 'h376D;
+                    y <= 'h2000;
+                    z <= 'h0000;
+                end
+                else begin          // (1/4,sqrt(3/4),30deg)
+                    x <= 'h2000;
+                    y <= 'h376D;
+                    z <= 'h2183;
+                end
             default: begin
                 x <= `WORD_LENGTH'h0000;
                 y <= `WORD_LENGTH'h0000;

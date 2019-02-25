@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
-| Date             : Sun Feb 24 20:58:19 2019
+| Date             : Sun Feb 24 22:38:53 2019
 | Host             : tayler-arch running 64-bit Arch Linux
 | Command          : report_power -file board_power_routed.rpt -pb board_power_summary_routed.pb -rpx board_power_routed.rpx
 | Design           : board
@@ -53,12 +53,12 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.001 |        3 |       --- |             --- |
-| Slice Logic    |     0.001 |      415 |       --- |             --- |
-|   LUT as Logic |     0.001 |      204 |     20800 |            0.98 |
+| Slice Logic    |     0.001 |      433 |       --- |             --- |
+|   LUT as Logic |     0.001 |      226 |     20800 |            1.09 |
 |   CARRY4       |    <0.001 |       27 |      8150 |            0.33 |
 |   Register     |    <0.001 |      131 |     41600 |            0.31 |
 |   Others       |     0.000 |       18 |       --- |             --- |
-| Signals        |     0.001 |      332 |       --- |             --- |
+| Signals        |     0.001 |      347 |       --- |             --- |
 | I/O            |     0.001 |       23 |       106 |           21.70 |
 | Static Power   |     0.072 |          |           |                 |
 | Total          |     0.077 |          |           |                 |

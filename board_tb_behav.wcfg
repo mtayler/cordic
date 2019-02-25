@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="269440941fs"></ZoomStartTime>
-      <ZoomEndTime time="441782262fs"></ZoomEndTime>
-      <Cursor1Time time="279366000fs"></Cursor1Time>
+      <ZoomStartTime time="952404000fs"></ZoomStartTime>
+      <ZoomEndTime time="1031904001fs"></ZoomEndTime>
+      <Cursor1Time time="970904000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="210"></NameColumnWidth>
-      <ValueColumnWidth column_width="167"></ValueColumnWidth>
+      <ValueColumnWidth column_width="163"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="22" />
+   <WVObjectSize size="28" />
    <wvobject type="array" fp_name="/board_tb/sel_xyz_init">
       <obj_property name="ElementShortName">sel_xyz_init[1:0]</obj_property>
       <obj_property name="ObjectShortName">sel_xyz_init[1:0]</obj_property>
@@ -121,5 +121,29 @@
    <wvobject type="array" fp_name="/board_tb/BOARD/CORDIC/theta">
       <obj_property name="ElementShortName">theta[15:0]</obj_property>
       <obj_property name="ObjectShortName">theta[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/board_tb/BOARD/CORDIC/x_curr">
+      <obj_property name="ElementShortName">x_curr[15:0]</obj_property>
+      <obj_property name="ObjectShortName">x_curr[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/board_tb/BOARD/CORDIC/y_curr">
+      <obj_property name="ElementShortName">y_curr[15:0]</obj_property>
+      <obj_property name="ObjectShortName">y_curr[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/board_tb/BOARD/CORDIC/z_curr">
+      <obj_property name="ElementShortName">z_curr[15:0]</obj_property>
+      <obj_property name="ObjectShortName">z_curr[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/board_tb/BOARD/CORDIC/ALU/x_delta">
+      <obj_property name="ElementShortName">x_delta[15:0]</obj_property>
+      <obj_property name="ObjectShortName">x_delta[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/board_tb/BOARD/CORDIC/ALU/y_delta">
+      <obj_property name="ElementShortName">y_delta[15:0]</obj_property>
+      <obj_property name="ObjectShortName">y_delta[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/board_tb/BOARD/CORDIC/ALU/x_in">
+      <obj_property name="ElementShortName">x_in[15:0]</obj_property>
+      <obj_property name="ObjectShortName">x_in[15:0]</obj_property>
    </wvobject>
 </wave_config>
