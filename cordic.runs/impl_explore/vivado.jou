@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Wed Feb 27 17:57:54 2019
+# Process ID: 118099
+# Current directory: /home/mtayler/Documents/ceng441/cordic/cordic.runs/impl_explore
+# Command line: vivado -log board.vdi -applog -tempDir /var/log/xilinx/ -product Vivado -messageDb vivado.pb -mode batch -source board.tcl -notrace
+# Log file: /home/mtayler/Documents/ceng441/cordic/cordic.runs/impl_explore/board.vdi
+# Journal file: /home/mtayler/Documents/ceng441/cordic/cordic.runs/impl_explore/vivado.jou
+#-----------------------------------------------------------
+source board.tcl -notrace

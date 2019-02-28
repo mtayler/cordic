@@ -24,17 +24,17 @@ module board_tb();
 
 
     // Following only works for behavioural simulation
-//    always @(done)
-//        if (done) begin
-//            $display("op: %1d, x_in: %04X, y_in: %04X, z_in: %04X", op_in, x_in, y_in, z_in);
-//            $display("\tx: %04X, y: %04X, z: %04X\n", board.x_out, board.y_out, board.z_out);
-//        end
-//        else begin
-//            op_in <= board.op;
-//            x_in <= board.x;
-//            y_in <= board.y;
-//            z_in <= board.z;
-//        end            
+    always @(done)
+        if (done) begin
+            $display("op: %1d, x_in: %04X, y_in: %04X, z_in: %04X", op_in, x_in, y_in, z_in);
+            $display("\tx: %04X, y: %04X, z: %04X\n", board.x_out, board.y_out, board.z_out);
+        end
+        else begin
+            op_in <= board.op;
+            x_in <= board.x;
+            y_in <= board.y;
+            z_in <= board.z;
+        end            
         
     initial
     begin

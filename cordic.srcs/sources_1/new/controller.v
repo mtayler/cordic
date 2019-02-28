@@ -27,16 +27,19 @@ module controller #(parameter WORD_LENGTH=16, INDEX_LENGTH=4) (
     input z_sign,
     input y_sign,
     output [WORD_LENGTH-1:0] theta,
-    output reg [INDEX_LENGTH-1:0] i,
+    output [INDEX_LENGTH-1:0] i,
     output reg mu,
-    output reg done
+    output done
     );
     
-    wire [WORD_LENGTH-1:0] sig;
+    reg [INDEX_LENGTH-1:0] index;
     
     reg [WORD_LENGTH-1:0] THETA_LOOKUP [0:WORD_LENGTH-1];
     
     initial $readmemh("theta_lookup.mem", THETA_LOOKUP, 0, WORD_LENGTH-1);
+        
+    assign done = ~|index;
+    assign i = ~index;
     
     // Value to check for end condition
 //    assign sig = (op) ? y : z;
@@ -49,17 +52,16 @@ module controller #(parameter WORD_LENGTH=16, INDEX_LENGTH=4) (
             // mu is -sgn(y*x) -> because x is always positive, only need to check y
             mu = y_sign;
     
-    assign theta = THETA_LOOKUP[i];
+    assign theta = THETA_LOOKUP[index];
     
     always @(posedge clk)
     begin
         if (!reset_n)
         begin
-            i <= 0;
-            done <= 1'b0;
+            index <= {INDEX_LENGTH{1'b1}};
         end
         else if (~done)
-            {done,i} <= i + 1;
+            index <= index - 1;
     end
     
 endmodule
