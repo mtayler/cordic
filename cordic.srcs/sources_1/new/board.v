@@ -48,8 +48,9 @@ module board(
         assign start_db = start;
         assign reset_db_n = reset;
 `else
-    debouncer RESET_DB (.clk(clk), .raw(~reset), .reset_n(1'b1), .debounced(reset_db_n));
-    debouncer START_DB (.clk(clk), .raw(start), .reset_n(1'b1), .debounced(start_db));
+    // Need to set counter length parameter based on clock (21 okay for 100MHz ~ 300MHz)
+    debouncer #(21) RESET_DB (.clk(clk), .raw(~reset), .reset_n(1'b1), .debounced(reset_db_n));
+    debouncer #(21) START_DB (.clk(clk), .raw(start), .reset_n(1'b1), .debounced(start_db));
 `endif
     
     cordic CORDIC (.x(x), .y(y), .z(z), .op(op), .start(start_db), .reset_n(reset_db_n), .clk(clk),

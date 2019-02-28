@@ -29,7 +29,6 @@ module debouncer(
     output reg debounced
     );
     
-    parameter CLK_FREQ = 100_000_000;
     parameter COUNTER_LENGTH = 20;
     
     wire q1, q2;

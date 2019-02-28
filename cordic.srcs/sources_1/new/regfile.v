@@ -32,14 +32,12 @@ module regfile #(parameter WORD_LENGTH=16, INDEX_LENGTH=4) (
     output reg [WORD_LENGTH-1:0] z_out
     );
     
-    reg [WORD_LENGTH-1:0] x, y, z;
-    
     always @(posedge clk)
         if (!reset_n)
         begin
-            x <= {WORD_LENGTH{1'b0}};
-            y <= {WORD_LENGTH{1'b0}};
-            z <= {WORD_LENGTH{1'b0}};
+            x_out <= {WORD_LENGTH{1'b0}};
+            y_out <= {WORD_LENGTH{1'b0}};
+            z_out <= {WORD_LENGTH{1'b0}};
         end
         else if (write_en)
         begin

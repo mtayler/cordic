@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
-| Date             : Sun Feb 24 22:38:53 2019
+| Date             : Wed Feb 27 16:19:55 2019
 | Host             : tayler-arch running 64-bit Arch Linux
 | Command          : report_power -file board_power_routed.rpt -pb board_power_summary_routed.pb -rpx board_power_routed.rpx
 | Design           : board
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.077        |
+| Total On-Chip Power (W)  | 0.085        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.005        |
+| Dynamic (W)              | 0.013        |
 | Device Static (W)        | 0.072        |
 | Effective TJA (C/W)      | 5.0          |
 | Max Ambient (C)          | 84.6         |
@@ -52,16 +52,16 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |     0.001 |        3 |       --- |             --- |
-| Slice Logic    |     0.001 |      433 |       --- |             --- |
-|   LUT as Logic |     0.001 |      226 |     20800 |            1.09 |
-|   CARRY4       |    <0.001 |       27 |      8150 |            0.33 |
-|   Register     |    <0.001 |      131 |     41600 |            0.31 |
-|   Others       |     0.000 |       18 |       --- |             --- |
-| Signals        |     0.001 |      347 |       --- |             --- |
-| I/O            |     0.001 |       23 |       106 |           21.70 |
+| Clocks         |     0.003 |        3 |       --- |             --- |
+| Slice Logic    |     0.003 |      507 |       --- |             --- |
+|   LUT as Logic |     0.003 |      309 |     20800 |            1.49 |
+|   CARRY4       |    <0.001 |       41 |      8150 |            0.50 |
+|   Register     |    <0.001 |      133 |     41600 |            0.32 |
+|   Others       |     0.000 |       19 |       --- |             --- |
+| Signals        |     0.004 |      414 |       --- |             --- |
+| I/O            |     0.003 |       23 |       106 |           21.70 |
 | Static Power   |     0.072 |          |           |                 |
-| Total          |     0.077 |          |           |                 |
+| Total          |     0.085 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -71,9 +71,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.013 |       0.004 |      0.010 |
+| Vccint    |       1.000 |     0.020 |       0.011 |      0.010 |
 | Vccaux    |       1.800 |     0.013 |       0.000 |      0.013 |
-| Vcco33    |       3.300 |     0.001 |       0.000 |      0.001 |
+| Vcco33    |       3.300 |     0.002 |       0.001 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -127,7 +127,7 @@ Table of Contents
 +-------------+--------+-----------------+
 | Clock       | Domain | Constraint (ns) |
 +-------------+--------+-----------------+
-| sys_clk_pin | clk    |            10.0 |
+| sys_clk_pin | clk    |             5.1 |
 +-------------+--------+-----------------+
 
 
@@ -140,10 +140,11 @@ Table of Contents
 +----------------+-----------+
 | Name           | Power (W) |
 +----------------+-----------+
-| board          |     0.005 |
-|   CORDIC       |     0.002 |
-|     CONTROLLER |    <0.001 |
-|     REGFILE    |     0.002 |
+| board          |     0.013 |
+|   CORDIC       |     0.007 |
+|     ALU        |     0.002 |
+|     CONTROLLER |     0.002 |
+|     REGFILE    |     0.004 |
 |   HEX_DRIVER   |    <0.001 |
 |   RESET_DB     |    <0.001 |
 |     DFF1       |    <0.001 |

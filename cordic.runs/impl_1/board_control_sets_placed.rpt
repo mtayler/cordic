@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
-| Date         : Sun Feb 24 22:38:36 2019
+| Date         : Wed Feb 27 16:19:32 2019
 | Host         : tayler-arch running 64-bit Arch Linux
 | Command      : report_control_sets -verbose -file board_control_sets_placed.rpt
 | Design       : board
@@ -22,8 +22,8 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Number of unique control sets                            |     9 |
-| Unused register locations in slices containing registers |    37 |
+| Number of unique control sets                            |     8 |
+| Unused register locations in slices containing registers |    27 |
 +----------------------------------------------------------+-------+
 
 
@@ -33,31 +33,30 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |               7 |            7 |
-| No           | No                    | Yes                    |              23 |            9 |
-| No           | Yes                   | No                     |              40 |           10 |
-| Yes          | No                    | No                     |              47 |           19 |
+| No           | No                    | No                     |               7 |            6 |
+| No           | No                    | Yes                    |              23 |            6 |
+| No           | Yes                   | No                     |              42 |           12 |
+| Yes          | No                    | No                     |               4 |            4 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |              14 |            6 |
+| Yes          | Yes                   | No                     |              57 |           32 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 3. Detailed Control Set Information
 -----------------------------------
 
-+----------------+------------------------------------+----------------------------------+------------------+----------------+
-|  Clock Signal  |            Enable Signal           |         Set/Reset Signal         | Slice Load Count | Bel Load Count |
-+----------------+------------------------------------+----------------------------------+------------------+----------------+
-| ~clk_IBUF_BUFG |                                    |                                  |                2 |              2 |
-|  clk_IBUF_BUFG | RESET_DB/reset_db_n                |                                  |                3 |              4 |
-|  clk_IBUF_BUFG |                                    |                                  |                5 |              5 |
-|  clk_IBUF_BUFG | RESET_DB/x_out_reg[1]              | CORDIC/REGFILE/x_out[15]_i_1_n_0 |                4 |              5 |
-|  clk_IBUF_BUFG | CORDIC/CONTROLLER/i_rep[3]_i_2_n_0 | START_DB/SR[0]                   |                2 |              9 |
-| ~clk_IBUF_BUFG |                                    | RESET_DB/DFF1/counter_reg[0]     |                5 |             20 |
-| ~clk_IBUF_BUFG |                                    | START_DB/DFF1/counter_reg[0]     |                5 |             20 |
-|  clk_IBUF_BUFG |                                    | RESET_DB/AS[0]                   |                9 |             23 |
-|  clk_IBUF_BUFG | RESET_DB/x_out_reg[1]              |                                  |               16 |             43 |
-+----------------+------------------------------------+----------------------------------+------------------+----------------+
++----------------+------------------------------------+------------------------------+------------------+----------------+
+|  Clock Signal  |            Enable Signal           |       Set/Reset Signal       | Slice Load Count | Bel Load Count |
++----------------+------------------------------------+------------------------------+------------------+----------------+
+| ~clk_IBUF_BUFG |                                    |                              |                1 |              2 |
+|  clk_IBUF_BUFG | RESET_DB/reset_db_n                |                              |                4 |              4 |
+|  clk_IBUF_BUFG |                                    |                              |                5 |              5 |
+|  clk_IBUF_BUFG | CORDIC/CONTROLLER/i_rep[3]_i_2_n_0 | START_DB/SR[0]               |                6 |              9 |
+| ~clk_IBUF_BUFG |                                    | START_DB/DFF1/counter_reg[0] |                6 |             21 |
+| ~clk_IBUF_BUFG |                                    | RESET_DB/DFF1/counter_reg[0] |                6 |             21 |
+|  clk_IBUF_BUFG |                                    | RESET_DB/AS[0]               |                6 |             23 |
+|  clk_IBUF_BUFG | START_DB/E[0]                      | RESET_DB/AS[0]               |               26 |             48 |
++----------------+------------------------------------+------------------------------+------------------+----------------+
 
 
 +--------+-----------------------+
@@ -65,7 +64,7 @@ Table of Contents
 +--------+-----------------------+
 | 2      |                     1 |
 | 4      |                     1 |
-| 5      |                     2 |
+| 5      |                     1 |
 | 9      |                     1 |
 | 16+    |                     4 |
 +--------+-----------------------+

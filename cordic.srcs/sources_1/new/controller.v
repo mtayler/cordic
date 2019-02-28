@@ -24,13 +24,12 @@ module controller #(parameter WORD_LENGTH=16, INDEX_LENGTH=4) (
     input clk,
     input reset_n,
     input op,
-    input signed [WORD_LENGTH-1:0] z,
-    input signed [WORD_LENGTH-1:0] y,
-    input x_sign,
+    input z_sign,
+    input y_sign,
     output [WORD_LENGTH-1:0] theta,
-    output reg [INDEX_LENGTH:0] i,          // no -1 because we want 0-15 iterations and done when i=16
+    output reg [INDEX_LENGTH-1:0] i,
     output reg mu,
-    output done
+    output reg done
     );
     
     wire [WORD_LENGTH-1:0] sig;
@@ -45,23 +44,22 @@ module controller #(parameter WORD_LENGTH=16, INDEX_LENGTH=4) (
     // Select mu given op and values
     always @(*)
         if (!op)        // Rotation
-            mu = ~(z[WORD_LENGTH-1]);   // mu is sign of z
+            mu = ~(z_sign);   // mu is sign of z
         else if (op)    // Vectoring
-            mu = (y[WORD_LENGTH-1] ^ x_sign);   // mu is -sgn(y * x)
+            // mu is -sgn(y*x) -> because x is always positive, only need to check y
+            mu = y_sign;
     
     assign theta = THETA_LOOKUP[i];
-    
-    // Done when iterations are done
-    assign done = i[INDEX_LENGTH];
     
     always @(posedge clk)
     begin
         if (!reset_n)
         begin
             i <= 0;
+            done <= 1'b0;
         end
-        else if (!done)    // Continue iterations only if not done
-            i <= i + 1;
+        else if (~done)
+            {done,i} <= i + 1;
     end
     
 endmodule
