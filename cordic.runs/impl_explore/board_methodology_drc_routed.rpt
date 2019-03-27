@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
-| Date         : Wed Feb 27 17:52:31 2019
+| Date         : Mon Mar 11 21:40:49 2019
 | Host         : tayler-arch running 64-bit Arch Linux
 | Command      : report_methodology -file board_methodology_drc_routed.rpt -pb board_methodology_drc_routed.pb -rpx board_methodology_drc_routed.rpx
 | Design       : board
@@ -24,122 +24,166 @@ Table of Contents
       Design limits: <entire design considered>
              Max violations: <unlimited>
              Violations found: 22
-+-----------+----------+-------------------------------+------------+
-| Rule      | Severity | Description                   | Violations |
-+-----------+----------+-------------------------------+------------+
-| TIMING-18 | Warning  | Missing input or output delay | 22         |
-+-----------+----------+-------------------------------+------------+
++--------+----------+------------------------------------------+------------+
+| Rule   | Severity | Description                              | Violations |
++--------+----------+------------------------------------------+------------+
+| XDCH-2 | Warning  | Same min and max delay values on IO port | 22         |
++--------+----------+------------------------------------------+------------+
 
 2. REPORT DETAILS
 -----------------
-TIMING-18#1 Warning
-Missing input or output delay  
-An input delay is missing on op relative to clock(s) sys_clk_pin
+XDCH-2#1 Warning
+Same min and max delay values on IO port  
+The same input delay of 0.000 ns has been defined on port 'op' relative to clock clk for both max and min. Make sure this reflects the design intent.
+set_input_delay -clock [get_clocks clk] 0.000 [get_ports op]
+/home/mtayler/Documents/ceng441/cordic/cordic.srcs/constrs_1/imports/digilent-xdc-master/Basys-3-Master.xdc (Line: 307)
 Related violations: <none>
 
-TIMING-18#2 Warning
-Missing input or output delay  
-An input delay is missing on reset relative to clock(s) sys_clk_pin
+XDCH-2#2 Warning
+Same min and max delay values on IO port  
+The same input delay of 0.000 ns has been defined on port 'reset' relative to clock clk for both max and min. Make sure this reflects the design intent.
+set_input_delay -clock [get_clocks clk] 0.000 [get_ports reset]
+/home/mtayler/Documents/ceng441/cordic/cordic.srcs/constrs_1/imports/digilent-xdc-master/Basys-3-Master.xdc (Line: 309)
 Related violations: <none>
 
-TIMING-18#3 Warning
-Missing input or output delay  
-An input delay is missing on sel_out[0] relative to clock(s) sys_clk_pin
+XDCH-2#3 Warning
+Same min and max delay values on IO port  
+The same input delay of 0.000 ns has been defined on port 'sel_out[0]' relative to clock clk for both max and min. Make sure this reflects the design intent.
+set_input_delay -clock [get_clocks clk] 0.000 [get_ports {sel_out[*]}]
+/home/mtayler/Documents/ceng441/cordic/cordic.srcs/constrs_1/imports/digilent-xdc-master/Basys-3-Master.xdc (Line: 313)
 Related violations: <none>
 
-TIMING-18#4 Warning
-Missing input or output delay  
-An input delay is missing on sel_out[1] relative to clock(s) sys_clk_pin
+XDCH-2#4 Warning
+Same min and max delay values on IO port  
+The same input delay of 0.000 ns has been defined on port 'sel_out[1]' relative to clock clk for both max and min. Make sure this reflects the design intent.
+set_input_delay -clock [get_clocks clk] 0.000 [get_ports {sel_out[*]}]
+/home/mtayler/Documents/ceng441/cordic/cordic.srcs/constrs_1/imports/digilent-xdc-master/Basys-3-Master.xdc (Line: 313)
 Related violations: <none>
 
-TIMING-18#5 Warning
-Missing input or output delay  
-An input delay is missing on sel_xyz_init[0] relative to clock(s) sys_clk_pin
+XDCH-2#5 Warning
+Same min and max delay values on IO port  
+The same input delay of 0.000 ns has been defined on port 'sel_xyz_init[0]' relative to clock clk for both max and min. Make sure this reflects the design intent.
+set_input_delay -clock [get_clocks clk] 0.000 [get_ports {sel_xyz_init[*]}]
+/home/mtayler/Documents/ceng441/cordic/cordic.srcs/constrs_1/imports/digilent-xdc-master/Basys-3-Master.xdc (Line: 311)
 Related violations: <none>
 
-TIMING-18#6 Warning
-Missing input or output delay  
-An input delay is missing on sel_xyz_init[1] relative to clock(s) sys_clk_pin
+XDCH-2#6 Warning
+Same min and max delay values on IO port  
+The same input delay of 0.000 ns has been defined on port 'sel_xyz_init[1]' relative to clock clk for both max and min. Make sure this reflects the design intent.
+set_input_delay -clock [get_clocks clk] 0.000 [get_ports {sel_xyz_init[*]}]
+/home/mtayler/Documents/ceng441/cordic/cordic.srcs/constrs_1/imports/digilent-xdc-master/Basys-3-Master.xdc (Line: 311)
 Related violations: <none>
 
-TIMING-18#7 Warning
-Missing input or output delay  
-An input delay is missing on show_x relative to clock(s) sys_clk_pin
+XDCH-2#7 Warning
+Same min and max delay values on IO port  
+The same input delay of 0.000 ns has been defined on port 'show_x' relative to clock clk for both max and min. Make sure this reflects the design intent.
+set_input_delay -clock [get_clocks clk] 0.000 [get_ports show_x]
+/home/mtayler/Documents/ceng441/cordic/cordic.srcs/constrs_1/imports/digilent-xdc-master/Basys-3-Master.xdc (Line: 315)
 Related violations: <none>
 
-TIMING-18#8 Warning
-Missing input or output delay  
-An input delay is missing on show_y relative to clock(s) sys_clk_pin
+XDCH-2#8 Warning
+Same min and max delay values on IO port  
+The same input delay of 0.000 ns has been defined on port 'show_y' relative to clock clk for both max and min. Make sure this reflects the design intent.
+set_input_delay -clock [get_clocks clk] 0.000 [get_ports show_y]
+/home/mtayler/Documents/ceng441/cordic/cordic.srcs/constrs_1/imports/digilent-xdc-master/Basys-3-Master.xdc (Line: 317)
 Related violations: <none>
 
-TIMING-18#9 Warning
-Missing input or output delay  
-An input delay is missing on show_z relative to clock(s) sys_clk_pin
+XDCH-2#9 Warning
+Same min and max delay values on IO port  
+The same input delay of 0.000 ns has been defined on port 'show_z' relative to clock clk for both max and min. Make sure this reflects the design intent.
+set_input_delay -clock [get_clocks clk] 0.000 [get_ports show_z]
+/home/mtayler/Documents/ceng441/cordic/cordic.srcs/constrs_1/imports/digilent-xdc-master/Basys-3-Master.xdc (Line: 319)
 Related violations: <none>
 
-TIMING-18#10 Warning
-Missing input or output delay  
-An input delay is missing on start relative to clock(s) sys_clk_pin
+XDCH-2#10 Warning
+Same min and max delay values on IO port  
+The same input delay of 0.000 ns has been defined on port 'start' relative to clock clk for both max and min. Make sure this reflects the design intent.
+set_input_delay -clock [get_clocks clk] 0.000 [get_ports start]
+/home/mtayler/Documents/ceng441/cordic/cordic.srcs/constrs_1/imports/digilent-xdc-master/Basys-3-Master.xdc (Line: 321)
 Related violations: <none>
 
-TIMING-18#11 Warning
-Missing input or output delay  
-An output delay is missing on an[0] relative to clock(s) sys_clk_pin
+XDCH-2#11 Warning
+Same min and max delay values on IO port  
+The same output delay of 0.000 ns has been defined on port 'an[0]' relative to clock clk for both max and min. Make sure this reflects the design intent.
+set_output_delay -clock [get_clocks clk] 0.000 [get_ports {an[*]}]
+/home/mtayler/Documents/ceng441/cordic/cordic.srcs/constrs_1/imports/digilent-xdc-master/Basys-3-Master.xdc (Line: 324)
 Related violations: <none>
 
-TIMING-18#12 Warning
-Missing input or output delay  
-An output delay is missing on an[1] relative to clock(s) sys_clk_pin
+XDCH-2#12 Warning
+Same min and max delay values on IO port  
+The same output delay of 0.000 ns has been defined on port 'an[1]' relative to clock clk for both max and min. Make sure this reflects the design intent.
+set_output_delay -clock [get_clocks clk] 0.000 [get_ports {an[*]}]
+/home/mtayler/Documents/ceng441/cordic/cordic.srcs/constrs_1/imports/digilent-xdc-master/Basys-3-Master.xdc (Line: 324)
 Related violations: <none>
 
-TIMING-18#13 Warning
-Missing input or output delay  
-An output delay is missing on an[2] relative to clock(s) sys_clk_pin
+XDCH-2#13 Warning
+Same min and max delay values on IO port  
+The same output delay of 0.000 ns has been defined on port 'an[2]' relative to clock clk for both max and min. Make sure this reflects the design intent.
+set_output_delay -clock [get_clocks clk] 0.000 [get_ports {an[*]}]
+/home/mtayler/Documents/ceng441/cordic/cordic.srcs/constrs_1/imports/digilent-xdc-master/Basys-3-Master.xdc (Line: 324)
 Related violations: <none>
 
-TIMING-18#14 Warning
-Missing input or output delay  
-An output delay is missing on an[3] relative to clock(s) sys_clk_pin
+XDCH-2#14 Warning
+Same min and max delay values on IO port  
+The same output delay of 0.000 ns has been defined on port 'an[3]' relative to clock clk for both max and min. Make sure this reflects the design intent.
+set_output_delay -clock [get_clocks clk] 0.000 [get_ports {an[*]}]
+/home/mtayler/Documents/ceng441/cordic/cordic.srcs/constrs_1/imports/digilent-xdc-master/Basys-3-Master.xdc (Line: 324)
 Related violations: <none>
 
-TIMING-18#15 Warning
-Missing input or output delay  
-An output delay is missing on done relative to clock(s) sys_clk_pin
+XDCH-2#15 Warning
+Same min and max delay values on IO port  
+The same output delay of 0.000 ns has been defined on port 'done' relative to clock clk for both max and min. Make sure this reflects the design intent.
+set_output_delay -clock [get_clocks clk] 0.000 [get_ports done]
+/home/mtayler/Documents/ceng441/cordic/cordic.srcs/constrs_1/imports/digilent-xdc-master/Basys-3-Master.xdc (Line: 326)
 Related violations: <none>
 
-TIMING-18#16 Warning
-Missing input or output delay  
-An output delay is missing on seg[0] relative to clock(s) sys_clk_pin
+XDCH-2#16 Warning
+Same min and max delay values on IO port  
+The same output delay of 0.000 ns has been defined on port 'seg[0]' relative to clock clk for both max and min. Make sure this reflects the design intent.
+set_output_delay -clock [get_clocks clk] 0.000 [get_ports {seg[*]}]
+/home/mtayler/Documents/ceng441/cordic/cordic.srcs/constrs_1/imports/digilent-xdc-master/Basys-3-Master.xdc (Line: 328)
 Related violations: <none>
 
-TIMING-18#17 Warning
-Missing input or output delay  
-An output delay is missing on seg[1] relative to clock(s) sys_clk_pin
+XDCH-2#17 Warning
+Same min and max delay values on IO port  
+The same output delay of 0.000 ns has been defined on port 'seg[1]' relative to clock clk for both max and min. Make sure this reflects the design intent.
+set_output_delay -clock [get_clocks clk] 0.000 [get_ports {seg[*]}]
+/home/mtayler/Documents/ceng441/cordic/cordic.srcs/constrs_1/imports/digilent-xdc-master/Basys-3-Master.xdc (Line: 328)
 Related violations: <none>
 
-TIMING-18#18 Warning
-Missing input or output delay  
-An output delay is missing on seg[2] relative to clock(s) sys_clk_pin
+XDCH-2#18 Warning
+Same min and max delay values on IO port  
+The same output delay of 0.000 ns has been defined on port 'seg[2]' relative to clock clk for both max and min. Make sure this reflects the design intent.
+set_output_delay -clock [get_clocks clk] 0.000 [get_ports {seg[*]}]
+/home/mtayler/Documents/ceng441/cordic/cordic.srcs/constrs_1/imports/digilent-xdc-master/Basys-3-Master.xdc (Line: 328)
 Related violations: <none>
 
-TIMING-18#19 Warning
-Missing input or output delay  
-An output delay is missing on seg[3] relative to clock(s) sys_clk_pin
+XDCH-2#19 Warning
+Same min and max delay values on IO port  
+The same output delay of 0.000 ns has been defined on port 'seg[3]' relative to clock clk for both max and min. Make sure this reflects the design intent.
+set_output_delay -clock [get_clocks clk] 0.000 [get_ports {seg[*]}]
+/home/mtayler/Documents/ceng441/cordic/cordic.srcs/constrs_1/imports/digilent-xdc-master/Basys-3-Master.xdc (Line: 328)
 Related violations: <none>
 
-TIMING-18#20 Warning
-Missing input or output delay  
-An output delay is missing on seg[4] relative to clock(s) sys_clk_pin
+XDCH-2#20 Warning
+Same min and max delay values on IO port  
+The same output delay of 0.000 ns has been defined on port 'seg[4]' relative to clock clk for both max and min. Make sure this reflects the design intent.
+set_output_delay -clock [get_clocks clk] 0.000 [get_ports {seg[*]}]
+/home/mtayler/Documents/ceng441/cordic/cordic.srcs/constrs_1/imports/digilent-xdc-master/Basys-3-Master.xdc (Line: 328)
 Related violations: <none>
 
-TIMING-18#21 Warning
-Missing input or output delay  
-An output delay is missing on seg[5] relative to clock(s) sys_clk_pin
+XDCH-2#21 Warning
+Same min and max delay values on IO port  
+The same output delay of 0.000 ns has been defined on port 'seg[5]' relative to clock clk for both max and min. Make sure this reflects the design intent.
+set_output_delay -clock [get_clocks clk] 0.000 [get_ports {seg[*]}]
+/home/mtayler/Documents/ceng441/cordic/cordic.srcs/constrs_1/imports/digilent-xdc-master/Basys-3-Master.xdc (Line: 328)
 Related violations: <none>
 
-TIMING-18#22 Warning
-Missing input or output delay  
-An output delay is missing on seg[6] relative to clock(s) sys_clk_pin
+XDCH-2#22 Warning
+Same min and max delay values on IO port  
+The same output delay of 0.000 ns has been defined on port 'seg[6]' relative to clock clk for both max and min. Make sure this reflects the design intent.
+set_output_delay -clock [get_clocks clk] 0.000 [get_ports {seg[*]}]
+/home/mtayler/Documents/ceng441/cordic/cordic.srcs/constrs_1/imports/digilent-xdc-master/Basys-3-Master.xdc (Line: 328)
 Related violations: <none>
 
 

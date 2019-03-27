@@ -8,6 +8,6 @@ import math
 
 f = open('../cordic.srcs/sources_1/new/theta_lookup.mem', 'w');
 
-for i in range(15,-1,-1):
+for i in range(16):
     theta = int(round(math.atan(2 ** -i) * (2**14)))
     f.write("%04X // delta %d\r\n" % (theta, i));
