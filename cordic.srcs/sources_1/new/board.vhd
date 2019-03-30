@@ -54,7 +54,7 @@ architecture Behavioral of board is
     signal not_reset : STD_LOGIC;
     
     component DEBOUNCER
-        PORT ( clk, reset, pb_in : in STD_LOGIC;
+        PORT ( clk_200MHz, reset, pb_in : in STD_LOGIC;
                pb_out : out STD_LOGIC
              );
     end component;
@@ -77,25 +77,26 @@ architecture Behavioral of board is
         
 begin
 
-    start_db <= start;
-    reset_db_n <= reset;
+--    start_db <= start;
+--    reset_db_n <= reset;
+    
+    not_reset <= not reset;
+    RESET_DBNCR : DEBOUNCER PORT MAP (
+        clk_200MHz => clk,
+        reset => '0',
+        pb_in => not_reset,
+        pb_out => reset_db_n
+    );
+    
+    START_DBNCR : DEBOUNCER PORT MAP (
+        clk_200MHz => clk,
+        reset => '0',
+        pb_in => start,
+        pb_out => start_db
+    );
     
     reset_db <= not(reset_db_n);
-    
---    not_reset <= not reset;
---    RESET_DBNCR : DEBOUNCER PORT MAP (
---        clk => clk,
---        reset => '0',
---        pb_in => not_reset,
---        pb_out => reset_db_n
---    );
-    
---    START_DBNCR : DEBOUNCER PORT MAP (
---        clk => clk,
---        reset => '0',
---        pb_in => start,
---        pb_out => start_db
---    );
+
 
     CORDIC1 : CORDIC PORT MAP (
         clk => clk,
@@ -173,7 +174,7 @@ begin
         end case;
     end process;
     
-    update_output : process (show_x, show_y, show_z, sel_out) begin
+    update_output : process (show_x, show_y, show_z, sel_out, x, y, z, x_out, y_out, z_out) begin
         if (show_x = '1') then
             data_out <= STD_LOGIC_VECTOR(x);
         elsif (show_y = '1') then

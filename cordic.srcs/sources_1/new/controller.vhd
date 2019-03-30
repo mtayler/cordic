@@ -49,7 +49,7 @@ entity controller is
 end controller;
 
 architecture Behavioral of controller is
-    type rom_type is ARRAY (15 downto 0) of STD_LOGIC_VECTOR (15 downto 0);
+    type rom_type is ARRAY (0 to 15) of STD_LOGIC_VECTOR (15 downto 0);
 
     impure function InitRomFromFile (RomFileName : in string) return rom_type is
         FILE RomFile : text is in RomFileName;
@@ -68,7 +68,7 @@ architecture Behavioral of controller is
     signal index : UNSIGNED (3 downto 0);
 begin
 
-    done <= not or_reduce(std_logic_vector(index));
+    done <= nor_reduce(std_logic_vector(index));
     i <= not index;
     
     mu <= not z_sign when op = '0' else y_sign;

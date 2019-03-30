@@ -61,14 +61,14 @@ architecture Behavioral of cordic is
     
     component REGFILE
         PORT( clk, write_en, reset_n : in STD_LOGIC;
-              x_in, y_in, z_in : in STD_LOGIC_VECTOR;
-              x_out, y_out, z_out : out STD_LOGIC_VECTOR
+              x_in, y_in, z_in : in SIGNED;
+              x_out, y_out, z_out : out SIGNED
             );
     end component;
     
     component CONTROLLER
         PORT( clk, reset_n, op, z_sign, y_sign : in STD_LOGIC;
-              theta : in UNSIGNED (15 downto 0);
+              theta : out UNSIGNED (15 downto 0);
               i : out UNSIGNED (3 downto 0);
               mu : out STD_LOGIC;
               done : buffer STD_LOGIC
@@ -91,12 +91,12 @@ begin
         clk => clk,
         write_en => write_en,
         reset_n => reset_n,
-        x_in => STD_LOGIC_VECTOR(x_in),
-        y_in => STD_LOGIC_VECTOR(y_in),
-        z_in => STD_LOGIC_VECTOR(z_in),
-        STD_LOGIC_VECTOR(x_out) => x_curr,
-        STD_LOGIC_VECTOR(y_out) => y_curr,
-        STD_LOGIC_VECTOR(z_out) => z_curr
+        x_in => (x_in),
+        y_in => (y_in),
+        z_in => (z_in),
+        x_out => x_curr,
+        y_out => y_curr,
+        z_out => z_curr
     );
     
     ctrl_reset <= reset_n and not(start);

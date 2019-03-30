@@ -17,9 +17,6 @@ proc create_report { reportName command } {
   }
 }
 set_param xicom.use_bs_reader 1
-set_param synth.incrementalSynthesisCache /var/log/xilinx//.Xil_mtayler/Vivado-79320-tayler-arch/incrSyn
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
 create_project -in_memory -part xc7a35tcpg236-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -28,22 +25,22 @@ set_param synth.vivado.isSynthRun true
 set_property webtalk.parent_dir /home/mtayler/Documents/ceng441/cordic/cordic.cache/wt [current_project]
 set_property parent.project_path /home/mtayler/Documents/ceng441/cordic/cordic.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
-set_property target_language Verilog [current_project]
+set_property target_language VHDL [current_project]
 set_property board_part_repo_paths /opt/Digilent/vivado-boards/new/board_files [current_project]
 set_property board_part digilentinc.com:basys3:part0:1.1 [current_project]
 set_property ip_output_repo /home/mtayler/Documents/ceng441/cordic/cordic.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 read_mem /home/mtayler/Documents/ceng441/cordic/cordic.srcs/sources_1/new/theta_lookup.mem
-read_verilog -library xil_defaultlib {
-  /home/mtayler/Documents/ceng441/cordic/cordic.srcs/sources_1/new/alu.v
-  /home/mtayler/Documents/ceng441/cordic/cordic.srcs/sources_1/new/controller.v
-  /home/mtayler/Documents/ceng441/cordic/cordic.srcs/sources_1/new/debouncer.v
-  /home/mtayler/Documents/ceng441/cordic/cordic.srcs/sources_1/new/dff_async_reset.v
-  /home/mtayler/Documents/ceng441/cordic/cordic.srcs/sources_1/new/regfile.v
-  /home/mtayler/Documents/ceng441/cordic/cordic.srcs/sources_1/new/cordic.v
-  /home/mtayler/Documents/ceng441/cordic/cordic.srcs/sources_1/new/board.v
+read_verilog -library xil_defaultlib /home/mtayler/Documents/ceng441/cordic/cordic.srcs/sources_1/new/dff_async_reset.v
+read_vhdl -library xil_defaultlib {
+  /home/mtayler/Documents/ceng441/cordic/cordic.srcs/sources_1/imports/Downloads/hex_driver.vhd
+  /home/mtayler/Documents/ceng441/cordic/cordic.srcs/sources_1/new/alu.vhd
+  /home/mtayler/Documents/ceng441/cordic/cordic.srcs/sources_1/new/regfile.vhd
+  /home/mtayler/Documents/ceng441/cordic/cordic.srcs/sources_1/new/controller.vhd
+  /home/mtayler/Documents/ceng441/cordic/cordic.srcs/sources_1/new/cordic.vhd
+  /home/mtayler/Documents/ceng441/cordic/cordic.srcs/sources_1/imports/Downloads/debouncer.vhd
+  /home/mtayler/Documents/ceng441/cordic/cordic.srcs/sources_1/new/board.vhd
 }
-read_vhdl -library xil_defaultlib /home/mtayler/Documents/ceng441/cordic/cordic.srcs/sources_1/imports/Downloads/hex_driver.vhd
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
 # design are intentionally left as such for best results. Dcp files will be

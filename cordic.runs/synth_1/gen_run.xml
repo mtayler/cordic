@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1551318496">
-  <File Type="PA-TCL" Name="board.tcl"/>
-  <File Type="REPORTS-TCL" Name="board_reports.tcl"/>
-  <File Type="RDS-RDS" Name="board.vds"/>
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1553989580">
+  <File Type="VDS-TIMING-PB" Name="board_timing_summary_synth.pb"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="board_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="board.dcp"/>
   <File Type="RDS-UTIL-PB" Name="board_utilization_synth.pb"/>
   <File Type="RDS-UTIL" Name="board_utilization_synth.rpt"/>
+  <File Type="RDS-PROPCONSTRS" Name="board_drc_synth.rpt"/>
+  <File Type="RDS-RDS" Name="board.vds"/>
+  <File Type="REPORTS-TCL" Name="board_reports.tcl"/>
+  <File Type="PA-TCL" Name="board.tcl"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/alu.v">
       <FileInfo>
+        <Attr Name="UserDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -17,6 +21,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/controller.v">
       <FileInfo>
+        <Attr Name="UserDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -24,6 +29,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/debouncer.v">
       <FileInfo>
+        <Attr Name="UserDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -38,6 +44,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/regfile.v">
       <FileInfo>
+        <Attr Name="UserDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -45,6 +52,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/cordic.v">
       <FileInfo>
+        <Attr Name="UserDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -66,8 +74,47 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/board.v">
       <FileInfo>
+        <Attr Name="UserDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/alu.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/regfile.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/controller.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/cordic.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Downloads/debouncer.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../Downloads/debouncer.vhd"/>
+        <Attr Name="ImportTime" Val="1553979223"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/board.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
@@ -93,12 +140,12 @@
   <Strategy Version="1" Minor="2">
     <StratHandle Name="Flow_PerfOptimized_high" Flow="Vivado Synthesis 2017"/>
     <Step Id="synth_design">
-      <Option Id="RepFanoutThreshold">400</Option>
-      <Option Id="NoCombineLuts">1</Option>
-      <Option Id="ResourceSharing">2</Option>
-      <Option Id="FsmExtraction">1</Option>
       <Option Id="ShregMinSize">5</Option>
       <Option Id="KeepEquivalentRegisters">1</Option>
+      <Option Id="FsmExtraction">1</Option>
+      <Option Id="ResourceSharing">2</Option>
+      <Option Id="NoCombineLuts">1</Option>
+      <Option Id="RepFanoutThreshold">400</Option>
     </Step>
   </Strategy>
 </GenRun>

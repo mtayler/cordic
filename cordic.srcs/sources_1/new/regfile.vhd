@@ -24,7 +24,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
+use IEEE.NUMERIC_STD.ALL;
 
 -- Uncomment the following library declaration if instantiating
 -- any Xilinx leaf cells in this code.
@@ -35,12 +35,12 @@ entity regfile is
     Port ( clk : in STD_LOGIC;
            write_en : in STD_LOGIC;
            reset_n : in STD_LOGIC;
-           x_in : in STD_LOGIC_VECTOR (15 downto 0);
-           y_in : in STD_LOGIC_VECTOR (15 downto 0);
-           z_in : in STD_LOGIC_VECTOR (15 downto 0);
-           x_out : out STD_LOGIC_VECTOR (15 downto 0);
-           y_out : out STD_LOGIC_VECTOR (15 downto 0);
-           z_out : out STD_LOGIC_VECTOR (15 downto 0)
+           x_in : in SIGNED (15 downto 0);
+           y_in : in SIGNED (15 downto 0);
+           z_in : in SIGNED (15 downto 0);
+           x_out : out SIGNED (15 downto 0);
+           y_out : out SIGNED (15 downto 0);
+           z_out : out SIGNED (15 downto 0)
            );
 end regfile;
 

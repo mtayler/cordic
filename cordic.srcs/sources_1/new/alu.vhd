@@ -36,7 +36,7 @@ entity alu is
            y_in : in SIGNED (15 downto 0);
            z_in : in SIGNED (15 downto 0);
            theta : in UNSIGNED (15 downto 0);
-           i : in UNSIGNED (2 downto 0);
+           i : in UNSIGNED (3 downto 0);
            mu : in STD_LOGIC;
            op : in STD_LOGIC;
            x_out : out SIGNED (15 downto 0);
