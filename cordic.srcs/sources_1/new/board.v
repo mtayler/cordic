@@ -67,21 +67,21 @@ module board(
                     y <= 'h4000;
                     z <= 'h0000;
                 end
-                else begin          // (0.5,0,0)
+                else begin          // (0.5,0)
                     x <= 'h4000;
                     y <= 'h0000;
                     z <= 'h2183;
                 end
             2'b01:
-                if (op) begin       // (1/4,sqrt(3/16),30deg)
+                if (op) begin       // (1/4,sqrt(3/4))
                     x <= 'h2000;
-                    y <= 'h6EDA;
+                    y <= 'h376D;
                     z <= 'h0000;
                 end
-                else begin          // (sqrt(3/4),1/4,0)
+                else begin          // (sqrt(3/4),1/4,15deg)
                     x <= 'h376D;
                     y <= 'h2000;
-                    z <= 'h2183;
+                    z <= 'h10C1;
                 end
             2'b10:
                 if (op) begin       // (1/4,1/4,0)
@@ -95,7 +95,7 @@ module board(
                     z <= 'h4305;
             end
             2'b11:
-                if (op) begin       // (sqrt(3/4),1/4,0)
+                if (op) begin       // (sqrt(3/4),1/4)
                     x <= 'h376D;
                     y <= 'h2000;
                     z <= 'h0000;

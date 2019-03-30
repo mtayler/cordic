@@ -38,6 +38,7 @@ module controller #(parameter WORD_LENGTH=16, INDEX_LENGTH=4) (
     
     initial $readmemh("theta_lookup.mem", THETA_LOOKUP, 0, WORD_LENGTH-1);
         
+    // count down for performance reasons (higher possible clk)
     assign done = ~|index;
     assign i = ~index;
     
