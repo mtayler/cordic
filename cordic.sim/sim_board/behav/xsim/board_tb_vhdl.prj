@@ -1,6 +1,12 @@
 # compile vhdl design source files
 vhdl xil_defaultlib  \
 "../../../../cordic.srcs/sources_1/imports/Downloads/hex_driver.vhd" \
+"../../../../cordic.srcs/sources_1/new/alu.vhd" \
+"../../../../cordic.srcs/sources_1/new/regfile.vhd" \
+"../../../../cordic.srcs/sources_1/new/controller.vhd" \
+"../../../../cordic.srcs/sources_1/new/cordic.vhd" \
+"../../../../cordic.srcs/sources_1/imports/Downloads/debouncer.vhd" \
+"../../../../cordic.srcs/sources_1/new/board.vhd" \
 
 # Do not sort compile order
 nosort

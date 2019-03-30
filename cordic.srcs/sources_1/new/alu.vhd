@@ -32,21 +32,40 @@ use IEEE.NUMERIC_STD.ALL;
 --use UNISIM.VComponents.all;
 
 entity alu is
-    Port ( x_in : in STD_LOGIC_VECTOR (15 downto 0);
-           y_in : in STD_LOGIC_VECTOR (15 downto 0);
-           z_in : in STD_LOGIC_VECTOR (15 downto 0);
-           i : in STD_LOGIC_VECTOR (2 downto 0);
-           mu : in STD_LOGIC_VECTOR;
-           x_out : out STD_LOGIC_VECTOR (15 downto 0);
-           y_out : out STD_LOGIC_VECTOR (15 downto 0);
-           z_out : out STD_LOGIC_VECTOR (15 downto 0)
+    Port ( x_in : in SIGNED (15 downto 0);
+           y_in : in SIGNED (15 downto 0);
+           z_in : in SIGNED (15 downto 0);
+           theta : in UNSIGNED (15 downto 0);
+           i : in UNSIGNED (2 downto 0);
+           mu : in STD_LOGIC;
+           op : in STD_LOGIC;
+           x_out : out SIGNED (15 downto 0);
+           y_out : out SIGNED (15 downto 0);
+           z_out : out SIGNED (15 downto 0)
          );
 end alu;
 
 architecture Behavioral of alu is
-    signal x_delta : STD_LOGIC_VECTOR (15 downto 0);
+    signal x_delta : UNSIGNED (15 downto 0);
+    signal y_delta : UNSIGNED (15 downto 0);
+    signal sign_bits : SIGNED (15 downto 0);
+    signal sign_extend : UNSIGNED (15 downto 0);
 begin
 
-    x_delta <= unsigned(y_in) sll to_integer(delta);
+    -- signed shift right, but delta unsigned
+    x_delta <= unsigned(shift_right(y_in, to_integer(i)));
+    x_out <= x_in - to_integer(x_delta) when mu = '1' else
+             x_in + to_integer(x_delta);
+             
+    -- sign-extend y_delta if operation is rotation (x can be < 0) but treat x as magnitude for vectoring (unsigned).
+    sign_bits <= (15 => not(op) and x_in(15), others => '0');
+    sign_extend <= unsigned(shift_right(sign_bits, to_integer(i-1)));
+    
+    y_delta <= unsigned(shift_right(x_in, to_integer(i)));
+    y_out <= y_in + to_integer(y_delta) when mu = '1' else
+             y_in - to_integer(y_delta);
+    
+    z_out <= z_in - to_integer(theta) when mu = '1' else
+             z_in + to_integer(theta);
 
 end Behavioral;
