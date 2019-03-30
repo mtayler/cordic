@@ -25,7 +25,9 @@
 module board(
     input [1:0] sel_xyz_init,
     input [1:0] sel_out,
-    input in_out,
+    input show_x,
+    input show_y,
+    input show_z,
     input op,
     input start,
     input reset,
@@ -54,7 +56,7 @@ module board(
     cordic CORDIC (.x(x), .y(y), .z(z), .op(op), .start(start_db), .reset_n(reset_db_n), .clk(clk),
             .x_out(x_out), .y_out(y_out), .z_out(z_out), .done(done));
             
-                                       // reset on high
+                                        // reset on high
     hex_driver HEX_DRIVER (.clk(clk), .reset(~reset_db_n), .done(done), .d_in(data_out), .anodes(an), .cathodes(seg));
     
     always @(*)
@@ -111,15 +113,12 @@ module board(
         endcase
     
     always @(*)
-        if (in_out)
-            case (sel_out)
-                2'b00:
-                    data_out <= x;
-                2'b01:
-                    data_out <= y;
-                2'b11:
-                    data_out <= z;
-            endcase
+        if (show_x)
+            data_out <= x;
+        else if (show_y)
+            data_out <= y;
+        else if (show_z)
+            data_out <= z;
         else
             case (sel_out)
                 2'b00:

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_explore" LaunchPart="xc7a35tcpg236-1" LaunchTime="1552365478">
+<GenRun Id="impl_explore" LaunchPart="xc7a35tcpg236-1" LaunchTime="1551318497">
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <File Type="BG-DRC" Name="board.drc"/>
   <File Type="BG-BGN" Name="board.bgn"/>
@@ -143,7 +143,6 @@
       </FileInfo>
     </File>
     <Config>
-      <Option Name="TargetConstrsFile" Val="$PSRCDIR/constrs_1/imports/digilent-xdc-master/Basys-3-Master.xdc"/>
       <Option Name="ConstrsType" Val="XDC"/>
     </Config>
   </FileSet>
@@ -170,8 +169,6 @@
     <Step Id="post_route_phys_opt_design" EnableStepBool="1">
       <Option Id="Directive">0</Option>
     </Step>
-    <Step Id="write_bitstream">
-      <Option Id="BinFile">1</Option>
-    </Step>
+    <Step Id="write_bitstream"/>
   </Strategy>
 </GenRun>
