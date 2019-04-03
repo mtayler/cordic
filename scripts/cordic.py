@@ -28,7 +28,7 @@ if len(values) < 3:
 
 x_curr = float(int(values[0],16) / 2**15);
 y_curr = float(int(values[1],16) / 2**15);
-z_curr = float(int(values[2],16) / 2**14);
+z_curr = float(int(values[2],16) / 2**14); 
 
 print("i\tx (hex)\t\ty (hex)\t\tz (hex)\t\tdelta (hex)\tmu")
 print(80 * "-")

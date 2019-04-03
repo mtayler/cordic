@@ -2,8 +2,8 @@
 # Vivado v2017.4 (64-bit)
 # SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
 # IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
-# Start of session at: Sat Mar 30 16:46:22 2019
-# Process ID: 91129
+# Start of session at: Wed Apr  3 13:43:19 2019
+# Process ID: 1543
 # Current directory: /home/mtayler/Documents/ceng441/cordic/cordic.runs/synth_1
 # Command line: vivado -log board.vds -tempDir /var/log/xilinx/ -product Vivado -mode batch -messageDb vivado.pb -notrace -source board.tcl
 # Log file: /home/mtayler/Documents/ceng441/cordic/cordic.runs/synth_1/board.vds
@@ -16,9 +16,9 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 91136 
+INFO: Helper process launched with PID 1550 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1261.551 ; gain = 87.988 ; free physical = 1188 ; free virtual = 4010
+Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1259.559 ; gain = 87.988 ; free physical = 5253 ; free virtual = 6259
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'board' [/home/mtayler/Documents/ceng441/cordic/cordic.srcs/sources_1/new/board.vhd:49]
 INFO: [Synth 8-3491] module 'debouncer' declared at '/home/mtayler/Documents/ceng441/cordic/cordic.srcs/sources_1/imports/Downloads/debouncer.vhd:14' bound to instance 'RESET_DBNCR' of component 'DEBOUNCER' [/home/mtayler/Documents/ceng441/cordic/cordic.srcs/sources_1/new/board.vhd:84]
@@ -46,7 +46,7 @@ INFO: [Synth 8-226] default block is never used [/home/mtayler/Documents/ceng441
 INFO: [Synth 8-256] done synthesizing module 'board' (7#1) [/home/mtayler/Documents/ceng441/cordic/cordic.srcs/sources_1/new/board.vhd:49]
 WARNING: [Synth 8-3331] design alu has unconnected port op
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1304.082 ; gain = 130.520 ; free physical = 1199 ; free virtual = 4021
+Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1302.090 ; gain = 130.520 ; free physical = 5262 ; free virtual = 6270
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -56,7 +56,7 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1304.082 ; gain = 130.520 ; free physical = 1200 ; free virtual = 4021
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1302.090 ; gain = 130.520 ; free physical = 5260 ; free virtual = 6269
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -65,29 +65,29 @@ Processing XDC Constraints
 Initializing timing engine
 Parsing XDC File [/home/mtayler/Documents/ceng441/cordic/cordic.srcs/constrs_1/imports/digilent-xdc-master/Basys-3-Master.xdc]
 Finished Parsing XDC File [/home/mtayler/Documents/ceng441/cordic/cordic.srcs/constrs_1/imports/digilent-xdc-master/Basys-3-Master.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/mtayler/Documents/ceng441/cordic/cordic.srcs/constrs_1/imports/digilent-xdc-master/Basys-3-Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [/var/log/xilinx/.Xil_mtayler/Vivado-91129-tayler-arch/board_propImpl.xdc].
-Resolution: To avoid this warning, move constraints listed in [/var/log/xilinx/.Xil_mtayler/Vivado-91129-tayler-arch/board_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/mtayler/Documents/ceng441/cordic/cordic.srcs/constrs_1/imports/digilent-xdc-master/Basys-3-Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [/var/log/xilinx/.Xil_mtayler/Vivado-1543-tayler-arch/board_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [/var/log/xilinx/.Xil_mtayler/Vivado-1543-tayler-arch/board_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1628.285 ; gain = 0.000 ; free physical = 953 ; free virtual = 3775
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1626.293 ; gain = 0.000 ; free physical = 4978 ; free virtual = 6021
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:23 ; elapsed = 00:00:32 . Memory (MB): peak = 1628.285 ; gain = 454.723 ; free physical = 1029 ; free virtual = 3851
+Finished Constraint Validation : Time (s): cpu = 00:00:23 ; elapsed = 00:00:32 . Memory (MB): peak = 1626.293 ; gain = 454.723 ; free physical = 5053 ; free virtual = 6096
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:23 ; elapsed = 00:00:32 . Memory (MB): peak = 1628.285 ; gain = 454.723 ; free physical = 1029 ; free virtual = 3851
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:23 ; elapsed = 00:00:32 . Memory (MB): peak = 1626.293 ; gain = 454.723 ; free physical = 5053 ; free virtual = 6096
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:32 . Memory (MB): peak = 1628.285 ; gain = 454.723 ; free physical = 1029 ; free virtual = 3851
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:32 . Memory (MB): peak = 1626.293 ; gain = 454.723 ; free physical = 5053 ; free virtual = 6096
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5545] ROM "state" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "count" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
@@ -95,7 +95,7 @@ INFO: [Synth 8-5544] ROM "THETA_LOOKUP" won't be mapped to Block RAM because add
 WARNING: [Synth 8-6014] Unused sequential element index_reg was removed.  [/home/mtayler/Documents/ceng441/cordic/cordic.srcs/sources_1/new/controller.vhd:71]
 WARNING: [Synth 8-6014] Unused sequential element refresh_display_counter_reg was removed.  [/home/mtayler/Documents/ceng441/cordic/cordic.srcs/sources_1/imports/Downloads/hex_driver.vhd:43]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:23 ; elapsed = 00:00:33 . Memory (MB): peak = 1628.285 ; gain = 454.723 ; free physical = 1022 ; free virtual = 3844
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:23 ; elapsed = 00:00:33 . Memory (MB): peak = 1626.293 ; gain = 454.723 ; free physical = 5049 ; free virtual = 6092
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -124,8 +124,9 @@ Detailed RTL Component Info :
 	   4 Input     32 Bit        Muxes := 2     
 	  17 Input     16 Bit        Muxes := 1     
 	   2 Input     16 Bit        Muxes := 9     
+	   5 Input     16 Bit        Muxes := 2     
 	   4 Input     16 Bit        Muxes := 1     
-	   5 Input     15 Bit        Muxes := 6     
+	   5 Input     15 Bit        Muxes := 4     
 	   2 Input     14 Bit        Muxes := 8     
 	   2 Input     13 Bit        Muxes := 2     
 	  16 Input      7 Bit        Muxes := 1     
@@ -145,9 +146,10 @@ Hierarchical RTL Component report
 Module board 
 Detailed RTL Component Info : 
 +---Muxes : 
+	   5 Input     16 Bit        Muxes := 2     
 	   4 Input     16 Bit        Muxes := 1     
 	   2 Input     16 Bit        Muxes := 3     
-	   5 Input     15 Bit        Muxes := 6     
+	   5 Input     15 Bit        Muxes := 4     
 	   2 Input     14 Bit        Muxes := 8     
 	   2 Input     13 Bit        Muxes := 2     
 Module debouncer 
@@ -230,11 +232,11 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/\HEX/
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/\HEX/refresh_display_counter_reg[20] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/\HEX/refresh_display_counter_reg[19] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/\HEX/refresh_display_counter_reg[18] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/\HEX/refresh_display_counter_reg[22] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/\HEX/refresh_display_counter_reg[26] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/\HEX/refresh_display_counter_reg[27] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/\HEX/refresh_display_counter_reg[17] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/\HEX/refresh_display_counter_reg[21] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/\HEX/refresh_display_counter_reg[22] )
 WARNING: [Synth 8-3332] Sequential element (HEX/refresh_display_counter_reg[17]) is unused and will be removed from module board.
 WARNING: [Synth 8-3332] Sequential element (HEX/refresh_display_counter_reg[18]) is unused and will be removed from module board.
 WARNING: [Synth 8-3332] Sequential element (HEX/refresh_display_counter_reg[19]) is unused and will be removed from module board.
@@ -247,7 +249,7 @@ WARNING: [Synth 8-3332] Sequential element (HEX/refresh_display_counter_reg[25])
 WARNING: [Synth 8-3332] Sequential element (HEX/refresh_display_counter_reg[26]) is unused and will be removed from module board.
 WARNING: [Synth 8-3332] Sequential element (HEX/refresh_display_counter_reg[27]) is unused and will be removed from module board.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:26 ; elapsed = 00:00:35 . Memory (MB): peak = 1628.285 ; gain = 454.723 ; free physical = 1000 ; free virtual = 3822
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:35 . Memory (MB): peak = 1626.293 ; gain = 454.723 ; free physical = 5024 ; free virtual = 6069
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -258,15 +260,15 @@ Report RTL Partitions:
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
-Reading /var/log/xilinx//.Xil_mtayler/Vivado-91129-tayler-arch/realtime/board_synth.xdc
+Reading /var/log/xilinx//.Xil_mtayler/Vivado-1543-tayler-arch/realtime/board_synth.xdc
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:31 ; elapsed = 00:00:43 . Memory (MB): peak = 1628.285 ; gain = 454.723 ; free physical = 852 ; free virtual = 3674
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:31 ; elapsed = 00:00:44 . Memory (MB): peak = 1626.293 ; gain = 454.723 ; free physical = 4895 ; free virtual = 5947
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:33 ; elapsed = 00:00:45 . Memory (MB): peak = 1658.301 ; gain = 484.738 ; free physical = 853 ; free virtual = 3675
+Finished Timing Optimization : Time (s): cpu = 00:00:33 ; elapsed = 00:00:46 . Memory (MB): peak = 1658.309 ; gain = 486.738 ; free physical = 4873 ; free virtual = 5926
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -278,7 +280,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:33 ; elapsed = 00:00:45 . Memory (MB): peak = 1666.309 ; gain = 492.746 ; free physical = 852 ; free virtual = 3674
+Finished Technology Mapping : Time (s): cpu = 00:00:33 ; elapsed = 00:00:46 . Memory (MB): peak = 1658.309 ; gain = 486.738 ; free physical = 4866 ; free virtual = 5918
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -302,7 +304,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:34 ; elapsed = 00:00:46 . Memory (MB): peak = 1666.309 ; gain = 492.746 ; free physical = 854 ; free virtual = 3675
+Finished IO Insertion : Time (s): cpu = 00:00:33 ; elapsed = 00:00:46 . Memory (MB): peak = 1658.309 ; gain = 486.738 ; free physical = 4863 ; free virtual = 5915
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -315,7 +317,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:34 ; elapsed = 00:00:46 . Memory (MB): peak = 1666.309 ; gain = 492.746 ; free physical = 854 ; free virtual = 3675
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:33 ; elapsed = 00:00:46 . Memory (MB): peak = 1658.309 ; gain = 486.738 ; free physical = 4863 ; free virtual = 5915
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -327,25 +329,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:34 ; elapsed = 00:00:46 . Memory (MB): peak = 1666.309 ; gain = 492.746 ; free physical = 854 ; free virtual = 3675
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:33 ; elapsed = 00:00:46 . Memory (MB): peak = 1658.309 ; gain = 486.738 ; free physical = 4863 ; free virtual = 5915
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:34 ; elapsed = 00:00:46 . Memory (MB): peak = 1666.309 ; gain = 492.746 ; free physical = 854 ; free virtual = 3675
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:33 ; elapsed = 00:00:46 . Memory (MB): peak = 1658.309 ; gain = 486.738 ; free physical = 4863 ; free virtual = 5915
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:34 ; elapsed = 00:00:46 . Memory (MB): peak = 1666.309 ; gain = 492.746 ; free physical = 854 ; free virtual = 3675
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:33 ; elapsed = 00:00:46 . Memory (MB): peak = 1658.309 ; gain = 486.738 ; free physical = 4863 ; free virtual = 5915
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:34 ; elapsed = 00:00:46 . Memory (MB): peak = 1666.309 ; gain = 492.746 ; free physical = 854 ; free virtual = 3675
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:33 ; elapsed = 00:00:46 . Memory (MB): peak = 1658.309 ; gain = 486.738 ; free physical = 4863 ; free virtual = 5915
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -364,11 +366,11 @@ Report Cell Usage:
 |1     |BUFG   |     1|
 |2     |CARRY4 |    45|
 |3     |LUT1   |     3|
-|4     |LUT2   |    36|
+|4     |LUT2   |    37|
 |5     |LUT3   |    18|
 |6     |LUT4   |    37|
-|7     |LUT5   |    67|
-|8     |LUT6   |   223|
+|7     |LUT5   |    70|
+|8     |LUT6   |   217|
 |9     |FDCE   |    19|
 |10    |FDPE   |     4|
 |11    |FDRE   |   121|
@@ -381,21 +383,21 @@ Report Instance Areas:
 +------+----------------+------------+------+
 |      |Instance        |Module      |Cells |
 +------+----------------+------------+------+
-|1     |top             |            |   605|
-|2     |  CORDIC1       |cordic      |   289|
+|1     |top             |            |   603|
+|2     |  CORDIC1       |cordic      |   291|
 |3     |    ALU1        |alu         |    34|
-|4     |    CONTROLLER1 |controller  |    32|
+|4     |    CONTROLLER1 |controller  |    34|
 |5     |    REGFILE1    |regfile     |   222|
-|6     |  HEX           |hex_driver  |    90|
-|7     |  RESET_DBNCR   |debouncer   |    93|
-|8     |  START_DBNCR   |debouncer_0 |   109|
+|6     |  HEX           |hex_driver  |    80|
+|7     |  RESET_DBNCR   |debouncer   |    98|
+|8     |  START_DBNCR   |debouncer_0 |   110|
 +------+----------------+------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:34 ; elapsed = 00:00:46 . Memory (MB): peak = 1666.309 ; gain = 492.746 ; free physical = 854 ; free virtual = 3675
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:33 ; elapsed = 00:00:46 . Memory (MB): peak = 1658.309 ; gain = 486.738 ; free physical = 4863 ; free virtual = 5915
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 15 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:27 ; elapsed = 00:00:31 . Memory (MB): peak = 1666.309 ; gain = 168.543 ; free physical = 909 ; free virtual = 3731
-Synthesis Optimization Complete : Time (s): cpu = 00:00:34 ; elapsed = 00:00:46 . Memory (MB): peak = 1666.316 ; gain = 492.746 ; free physical = 909 ; free virtual = 3731
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:26 ; elapsed = 00:00:31 . Memory (MB): peak = 1658.309 ; gain = 162.535 ; free physical = 4919 ; free virtual = 5971
+Synthesis Optimization Complete : Time (s): cpu = 00:00:34 ; elapsed = 00:00:46 . Memory (MB): peak = 1658.316 ; gain = 486.738 ; free physical = 4918 ; free virtual = 5971
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 56 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -407,8 +409,8 @@ No Unisim elements were transformed.
 INFO: [Common 17-83] Releasing license: Synthesis
 55 Infos, 16 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:36 ; elapsed = 00:00:48 . Memory (MB): peak = 1666.316 ; gain = 518.590 ; free physical = 919 ; free virtual = 3741
+synth_design: Time (s): cpu = 00:00:36 ; elapsed = 00:00:48 . Memory (MB): peak = 1658.316 ; gain = 512.582 ; free physical = 4924 ; free virtual = 5976
 INFO: [Common 17-1381] The checkpoint '/home/mtayler/Documents/ceng441/cordic/cordic.runs/synth_1/board.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file board_utilization_synth.rpt -pb board_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.07 . Memory (MB): peak = 1666.316 ; gain = 0.000 ; free physical = 918 ; free virtual = 3740
-INFO: [Common 17-206] Exiting Vivado at Sat Mar 30 16:47:21 2019...
+report_utilization: Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.05 . Memory (MB): peak = 1658.316 ; gain = 0.000 ; free physical = 4936 ; free virtual = 5990
+INFO: [Common 17-206] Exiting Vivado at Wed Apr  3 13:44:19 2019...

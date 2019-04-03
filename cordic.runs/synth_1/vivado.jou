@@ -2,8 +2,8 @@
 # Vivado v2017.4 (64-bit)
 # SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
 # IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
-# Start of session at: Sat Mar 30 16:46:22 2019
-# Process ID: 91129
+# Start of session at: Wed Apr  3 13:43:19 2019
+# Process ID: 1543
 # Current directory: /home/mtayler/Documents/ceng441/cordic/cordic.runs/synth_1
 # Command line: vivado -log board.vds -tempDir /var/log/xilinx/ -product Vivado -mode batch -messageDb vivado.pb -notrace -source board.tcl
 # Log file: /home/mtayler/Documents/ceng441/cordic/cordic.runs/synth_1/board.vds

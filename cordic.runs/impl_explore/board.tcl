@@ -65,7 +65,6 @@ start_step write_bitstream
 set ACTIVE_STEP write_bitstream
 set rc [catch {
   create_msg_db write_bitstream.pb
-  set_param xicom.use_bs_reader 1
   set_param board.repoPaths /opt/Digilent/vivado-boards/new/board_files
   open_checkpoint board_postroute_physopt.dcp
   set_property webtalk.parent_dir /home/mtayler/Documents/ceng441/cordic/cordic.cache/wt [current_project]

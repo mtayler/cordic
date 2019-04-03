@@ -153,7 +153,7 @@ begin
                 else                -- (1/4 sqrt(3/4), 60deg)
                     x <= x"2000";
                     y <= x"376D";
-                    z <= x"4305";
+                    z <= x"2183";
                 end if;
             
             when "11" =>
@@ -164,7 +164,7 @@ begin
                 else                -- (1/4, sqrt(3/4), 30deg)
                     x <= x"2000";
                     y <= x"376D";
-                    z <= x"2183";
+                    z <= x"EF3F";
                 end if;
                 
             when others =>
