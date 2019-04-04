@@ -124,11 +124,11 @@ begin
     input_switch : process (sel_xyz_init, op) begin
         case sel_xyz_init is
             when "00" =>
-                if (op = '1') then  -- (0, 0.5, 30deg)
+                if (op = '1') then  -- (0, 0.5)
                     x <= x"0000";
                     y <= x"4000";
                     z <= x"0000";
-                else                -- (0.5, 0)
+                else                -- (0.5, 0, 30deg)
                     x <= x"4000";
                     y <= x"0000";
                     z <= x"2183";
