@@ -77,23 +77,23 @@ architecture Behavioral of board is
         
 begin
 
-    start_db <= start;
-    reset_db_n <= reset;
+--    start_db <= start;
+--    reset_db_n <= reset;
     
---    not_reset <= not reset;
---    RESET_DBNCR : DEBOUNCER PORT MAP (
---        clk_200MHz => clk,
---        reset => '0',
---        pb_in => not_reset,
---        pb_out => reset_db_n
---    );
+    not_reset <= not reset;
+    RESET_DBNCR : DEBOUNCER PORT MAP (
+        clk_200MHz => clk,
+        reset => '0',
+        pb_in => not_reset,
+        pb_out => reset_db_n
+    );
     
---    START_DBNCR : DEBOUNCER PORT MAP (
---        clk_200MHz => clk,
---        reset => '0',
---        pb_in => start,
---        pb_out => start_db
---    );
+    START_DBNCR : DEBOUNCER PORT MAP (
+        clk_200MHz => clk,
+        reset => '0',
+        pb_in => start,
+        pb_out => start_db
+    );
     
     reset_db <= not(reset_db_n);
 
