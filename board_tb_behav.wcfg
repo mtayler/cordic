@@ -11,13 +11,13 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="201000000fs"></ZoomStartTime>
-      <ZoomEndTime time="680000001fs"></ZoomEndTime>
-      <Cursor1Time time="275000000fs"></Cursor1Time>
+      <ZoomStartTime time="250000000fs"></ZoomStartTime>
+      <ZoomEndTime time="1750000001fs"></ZoomEndTime>
+      <Cursor1Time time="1500000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="210"></NameColumnWidth>
-      <ValueColumnWidth column_width="151"></ValueColumnWidth>
+      <ValueColumnWidth column_width="147"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="18" />
    <wvobject type="array" fp_name="/board_tb/sel_xyz_init">
@@ -117,6 +117,10 @@
       <wvobject type="array" fp_name="/board_tb/BOARD/CORDIC1/CONTROLLER1/theta">
          <obj_property name="ElementShortName">theta[15:0]</obj_property>
          <obj_property name="ObjectShortName">theta[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/board_tb/BOARD/CORDIC1/ALU1/y_delta">
+         <obj_property name="ElementShortName">y_delta[15:0]</obj_property>
+         <obj_property name="ObjectShortName">y_delta[15:0]</obj_property>
       </wvobject>
    </wvobject>
 </wave_config>

@@ -51,6 +51,7 @@ end controller;
 architecture Behavioral of controller is
     type rom_type is ARRAY (0 to 15) of STD_LOGIC_VECTOR (15 downto 0);
 
+    -- Function to load theta values from a .mem file
     impure function InitRomFromFile (RomFileName : in string) return rom_type is
         FILE RomFile : text is in RomFileName;
         variable RomFileLine : line;
@@ -64,17 +65,22 @@ architecture Behavioral of controller is
         return rom;
     end function;
     
+    -- Theta lookup populated from memory file
     signal THETA_LOOKUP : rom_type := InitRomFromFile("theta_lookup.mem");
     signal index : UNSIGNED (3 downto 0);
 begin
 
+    -- Calculation is done when index = 000
     done <= nor_reduce(std_logic_vector(index));
+    -- i value used in ALU needs to go from 0 -> 15 so we flip 'index'
     i <= not index;
     
+    -- mu = -sgn(z) for rotation or sgn(y) for vectoring
     mu <= not z_sign when op = '0' else y_sign;
 
     theta <= unsigned(THETA_LOOKUP(to_integer(index)));
     
+    -- index counts down because it was accidentally determined this allows a faster clock rate.
     update: process(clk) begin
         if (rising_edge(clk)) then
             if (reset_n = '0') then

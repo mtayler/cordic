@@ -48,6 +48,8 @@ architecture Behavioral of regfile is
 
 begin
 
+    -- Synchronous write on positive edge of clock when write_en asserted
+    -- (prevents overwriting when we're not doing a computation)
     update: process (clk) begin
         if rising_edge(clk) then
             if (reset_n = '0') then

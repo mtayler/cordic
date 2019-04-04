@@ -52,15 +52,14 @@ architecture Behavioral of alu is
     signal sign_extend : UNSIGNED (15 downto 0);
 begin
 
-    -- signed shift right, but delta unsigned
+    -- Asynchronous calculation of all values
+
+    -- sign extend when shifting right but treat delta as unsigned
     x_delta <= unsigned(shift_right(y_in, to_integer(i)));
+    -- mu determines addition or subtraction
     x_out <= x_in - to_integer(x_delta) when mu = '1' else
              x_in + to_integer(x_delta);
              
-    -- sign-extend y_delta if operation is rotation (x can be < 0) but treat x as magnitude for vectoring (unsigned).
-    sign_bits <= (15 => not(op) and x_in(15), others => '0');
-    sign_extend <= unsigned(shift_right(sign_bits, to_integer(i-1)));
-    
     y_delta <= unsigned(shift_right(x_in, to_integer(i)));
     y_out <= y_in + to_integer(y_delta) when mu = '1' else
              y_in - to_integer(y_delta);

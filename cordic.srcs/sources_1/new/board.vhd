@@ -77,6 +77,7 @@ architecture Behavioral of board is
         
 begin
 
+    -- Directly connect start and reset for simulations
 --    start_db <= start;
 --    reset_db_n <= reset;
     
@@ -121,6 +122,7 @@ begin
         cathodes => seg
     );
     
+    -- Select initial values based on sel_xyz_init and op inputs
     input_switch : process (sel_xyz_init, op) begin
         case sel_xyz_init is
             when "00" =>
@@ -174,6 +176,7 @@ begin
         end case;
     end process;
     
+    -- Choose which value to display on the hex display
     update_output : process (show_x, show_y, show_z, sel_out, x, y, z, x_out, y_out, z_out) begin
         if (show_x = '1') then
             data_out <= STD_LOGIC_VECTOR(x);

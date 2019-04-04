@@ -85,6 +85,8 @@ architecture Behavioral of cordic is
     end component;
 begin
 
+    -- Only write to the register file when calculation starts (load initial values)
+    -- or the computation is not done (write current iteration)
     write_en <= not(done) or start;
         
     REGFILE1 : REGFILE PORT MAP (
@@ -99,6 +101,7 @@ begin
         z_out => z_curr
     );
     
+    -- Reset the controller when start is pressed
     ctrl_reset <= reset_n and not(start);
     
     CONTROLLER1 : CONTROLLER PORT MAP (
@@ -126,6 +129,8 @@ begin
         z_out => z_new
     );
     
+    -- Save the selected operation for the duration of the calculation
+    -- (prevents change in operation halfway through a calculation)
     update_op : process (clk) begin
         if rising_edge(clk) then
             if (start = '1') then
