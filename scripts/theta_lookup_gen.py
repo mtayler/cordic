@@ -2,9 +2,8 @@
 
 import math
 
-
 # Generate theta lookup table for 16 values of i
-# in fixed point (q16)
+# in fixed point (q14)
 
 f = open('../cordic.srcs/sources_1/new/theta_lookup.mem', 'w');
 
